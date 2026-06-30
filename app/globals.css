@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================================
+   Note2Frais — Design System
+   A refined "forest emerald + warm paper + ink" palette for a finance tool
+   that consultants and managers use every day. Calm, precise, trustworthy.
+   ============================================================================ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  /* Brand — emerald (money / growth / trust) */
+  --color-brand-50: #ecfdf5;
+  --color-brand-100: #d1fae5;
+  --color-brand-200: #a7f3d0;
+  --color-brand-300: #6ee7b7;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-700: #047857;
+  --color-brand-800: #065f46;
+  --color-brand-900: #064e3b;
+  --color-brand-950: #022c22;
+
+  /* Ink — near-black with a green undertone */
+  --color-ink-50: #f4f6f5;
+  --color-ink-100: #e6ebe9;
+  --color-ink-200: #c9d4d0;
+  --color-ink-300: #a1b3ac;
+  --color-ink-400: #6f8a80;
+  --color-ink-500: #506b61;
+  --color-ink-600: #3d5448;
+  --color-ink-700: #2c3f36;
+  --color-ink-800: #1a2a23;
+  --color-ink-900: #0f1c17;
+  --color-ink-950: #08120e;
+
+  /* Paper — warm off-white surfaces */
+  --color-paper: #f7f5ef;
+  --color-paper-2: #f1ede4;
+  --color-cream: #fbfaf6;
+
+  /* Accent — warm amber for highlights / amounts */
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+
+  /* Status */
+  --color-pending: #b45309;
+  --color-approved: #047857;
+  --color-refused: #b91c1c;
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+
+  --shadow-soft: 0 1px 2px rgba(8, 18, 14, 0.04), 0 8px 24px -12px rgba(8, 18, 14, 0.12);
+  --shadow-card: 0 1px 3px rgba(8, 18, 14, 0.05), 0 12px 32px -16px rgba(8, 18, 14, 0.16);
+  --shadow-lift: 0 2px 4px rgba(8, 18, 14, 0.06), 0 24px 48px -20px rgba(8, 18, 14, 0.22);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink-950);
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink-950);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink-950);
+}
+
+/* Refined scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-200);
+  border-radius: 999px;
+  border: 3px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-300);
+}
+
+/* Utility layers ----------------------------------------------------------- */
+@layer utilities {
+  .surface {
+    background: var(--color-cream);
+    border: 1px solid var(--color-ink-100);
+  }
+  .surface-elevated {
+    background: #ffffff;
+    border: 1px solid var(--color-ink-100);
+    box-shadow: var(--shadow-card);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .grain {
+    background-image: radial-gradient(rgba(8, 18, 14, 0.035) 1px, transparent 0);
+    background-size: 4px 4px;
+  }
+  .ring-focus {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Keyframe animations ------------------------------------------------------ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in {
+  animation: fade-in 0.7s ease both;
+}
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink-100);
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+/* Focus visible polish for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
