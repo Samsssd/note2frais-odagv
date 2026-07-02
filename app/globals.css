@@ -7,31 +7,31 @@
    ============================================================================ */
 
 @theme {
-  /* Brand — emerald (money / growth / trust) */
-  --color-brand-50: #ecfdf5;
-  --color-brand-100: #d1fae5;
-  --color-brand-200: #a7f3d0;
-  --color-brand-300: #6ee7b7;
-  --color-brand-400: #34d399;
-  --color-brand-500: #10b981;
-  --color-brand-600: #059669;
-  --color-brand-700: #047857;
-  --color-brand-800: #065f46;
-  --color-brand-900: #064e3b;
-  --color-brand-950: #022c22;
+  /* Brand — rouge sombre (force / sérieux / passion) */
+  --color-brand-50: #fdf2f2;
+  --color-brand-100: #fde8e8;
+  --color-brand-200: #fbd5d5;
+  --color-brand-300: #f7b2b2;
+  --color-brand-400: #ef7a7a;
+  --color-brand-500: #d83a3a;
+  --color-brand-600: #b91c1c;
+  --color-brand-700: #9b1818;
+  --color-brand-800: #801c1c;
+  --color-brand-900: #6f1c1c;
+  --color-brand-950: #3b0909;
 
-  /* Ink — near-black with a green undertone */
-  --color-ink-50: #f4f6f5;
-  --color-ink-100: #e6ebe9;
-  --color-ink-200: #c9d4d0;
-  --color-ink-300: #a1b3ac;
-  --color-ink-400: #6f8a80;
-  --color-ink-500: #506b61;
-  --color-ink-600: #3d5448;
-  --color-ink-700: #2c3f36;
-  --color-ink-800: #1a2a23;
-  --color-ink-900: #0f1c17;
-  --color-ink-950: #08120e;
+  /* Ink — warm near-black (compatible rouge) */
+  --color-ink-50: #f7f7f7;
+  --color-ink-100: #e5e5e5;
+  --color-ink-200: #d4d4d4;
+  --color-ink-300: #a3a3a3;
+  --color-ink-400: #737373;
+  --color-ink-500: #525252;
+  --color-ink-600: #404040;
+  --color-ink-700: #2e2e2e;
+  --color-ink-800: #1a1a1a;
+  --color-ink-900: #0f0f0f;
+  --color-ink-950: #080808;
 
   /* Paper — warm off-white surfaces */
   --color-paper: #f7f5ef;
@@ -45,8 +45,8 @@
 
   /* Status */
   --color-pending: #b45309;
-  --color-approved: #047857;
-  --color-refused: #b91c1c;
+  --color-approved: #2563eb;
+  --color-refused: #9b1818;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -55,9 +55,9 @@
   --radius-2xl: 1.25rem;
   --radius-3xl: 1.75rem;
 
-  --shadow-soft: 0 1px 2px rgba(8, 18, 14, 0.04), 0 8px 24px -12px rgba(8, 18, 14, 0.12);
-  --shadow-card: 0 1px 3px rgba(8, 18, 14, 0.05), 0 12px 32px -16px rgba(8, 18, 14, 0.16);
-  --shadow-lift: 0 2px 4px rgba(8, 18, 14, 0.06), 0 24px 48px -20px rgba(8, 18, 14, 0.22);
+  --shadow-soft: 0 1px 2px rgba(8, 8, 8, 0.04), 0 8px 24px -12px rgba(8, 8, 8, 0.12);
+  --shadow-card: 0 1px 3px rgba(8, 8, 8, 0.05), 0 12px 32px -16px rgba(8, 8, 8, 0.16);
+  --shadow-lift: 0 2px 4px rgba(8, 8, 8, 0.06), 0 24px 48px -20px rgba(8, 8, 8, 0.22);
 }
 
 :root {
@@ -117,7 +117,7 @@ body {
     text-wrap: pretty;
   }
   .grain {
-    background-image: radial-gradient(rgba(8, 18, 14, 0.035) 1px, transparent 0);
+    background-image: radial-gradient(rgba(8, 8, 8, 0.035) 1px, transparent 0);
     background-size: 4px 4px;
   }
   .ring-focus {

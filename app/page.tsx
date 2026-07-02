@@ -361,6 +361,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== Loubia ===== */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+        <div className="surface-elevated overflow-hidden rounded-[2rem]">
+          <div className="grid lg:grid-cols-2">
+            <div className="flex items-center justify-center bg-brand-50 px-8 py-12 lg:py-16">
+              <div className="text-center">
+                <span className="text-8xl" role="img" aria-label="Haricots">
+                  🫘
+                </span>
+                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-600">
+                  Spécialité algérienne
+                </p>
+              </div>
+            </div>
+            <div className="px-8 py-12 lg:px-12 lg:py-16">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-600">
+                Au menu
+              </p>
+              <h2 className="mt-3 text-4xl font-semibold tracking-tight text-ink-950 sm:text-5xl">
+                La loubia algérienne
+              </h2>
+              <p className="mt-4 text-lg text-ink-600">
+                Haricots blancs fondants mijotés longuement dans une sauce tomate
+                parfumée. Un plat réconfortant et convivial, parfait pour un
+                déjeuner d&apos;affaires ou une soirée entre collègues.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm text-ink-500">
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                  Plat économique et nourrissant
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                  Souvent servi avec du pain bien chaud
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+                  À noter dans la catégorie Repas
+                </li>
+              </ul>
+              <Link
+                href="/depenses/nouveau"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lift transition hover:bg-brand-700"
+              >
+                Noter un repas
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== Final CTA ===== */}
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] bg-brand-600 px-8 py-16 text-center text-white sm:px-16">

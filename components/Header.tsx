@@ -12,6 +12,7 @@ import {
   Home,
   UserRound,
   ChevronDown,
+  Heart,
 } from "lucide-react";
 import { useAuthStore } from "@/lib/stores/useAuthStore";
 import { cn } from "@/lib/utils";
@@ -20,6 +21,7 @@ const LOGO_URL =
   "https://d2w5g74r7hbhjx.cloudfront.net/app_b7abd1d2/branding/logo/9242b731fdec8e14mr0zqkv6.png";
 
 const NAV = [
+  { href: "/keh-de-palerme", label: "Keh de Palerme", icon: Heart },
   { href: "/", label: "Accueil", icon: Home },
   { href: "/depenses", label: "Mes notes", icon: Receipt },
   { href: "/rapport", label: "Rapport", icon: BarChart3 },
