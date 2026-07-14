@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Note2Frais — Gestion des notes de frais",
+  title: "BL!NK//02 — Y2K Cyber Couture",
   description:
-    "Saisissez vos dépenses professionnelles, joignez vos justificatifs et automatisez le calcul des remboursements mensuels. Pour consultants et gestionnaires.",
+    "Born in 1999. Reborn for the future. Cyber-couture clothing for the digital generation. Shop the new drop.",
 };
 
 export default function RootLayout({
@@ -33,9 +33,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <AuthProvider>
-          <Header />
           <main className="flex-1">{children}</main>
-          <Footer />
         </AuthProvider>
       </body>
     </html>
